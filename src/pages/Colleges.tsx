@@ -30,73 +30,1302 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs.t
 // Mock data - in real app, this would come from the backend
 const mockColleges = [
   {
-    id: "1",
-    name: "Government College of Arts and Science",
-    location: "Central District",
-    city: "Mumbai",
-    state: "Maharashtra",
-    type: "Government",
-    establishedYear: 1962,
-    affiliation: "University of Mumbai",
-    courses: [
-      { name: "B.A. (English)", stream: "Arts", duration: "3 years", eligibility: "10+2", cutoff: 85, fees: 15000 },
-      { name: "B.Com", stream: "Commerce", duration: "3 years", eligibility: "10+2", cutoff: 88, fees: 18000 },
-      { name: "B.Sc. (Mathematics)", stream: "Science", duration: "3 years", eligibility: "10+2 with Science", cutoff: 90, fees: 20000 }
+    "id": "1",
+    "name": "University of Kashmir",
+    "location": "Srinagar",
+    "city": "Srinagar",
+    "state": "Jammu and Kashmir",
+    "type": "Government (State)",
+    "establishedYear": 1948,
+    "affiliation": "N/A",
+    "courses": [
+      {
+        "name": "B.A. English Literature",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG: 150-200",
+        "fees": "₹7,400-15,600"
+      },
+      {
+        "name": "B.A. History",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG: 150-200",
+        "fees": "₹7,400-15,600"
+      },
+      {
+        "name": "B.A. Political Science",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG: 150-200",
+        "fees": "₹7,400-15,600"
+      },
+      {
+        "name": "B.A. Psychology",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG: 150-200",
+        "fees": "₹7,400-15,600"
+      },
+      {
+        "name": "B.A. Sociology",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG: 150-200",
+        "fees": "₹7,400-15,600"
+      },
+      {
+        "name": "B.A. Islamic Studies",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG: 150-200",
+        "fees": "₹7,400-15,600"
+      },
+      {
+        "name": "B.A. Kashmiri",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG: 150-200",
+        "fees": "₹7,400-15,600"
+      },
+      {
+        "name": "B.A. Urdu",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG: 150-200",
+        "fees": "₹7,400-15,600"
+      },
+      {
+        "name": "B.A. Arabic",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG: 150-200",
+        "fees": "₹7,400-15,600"
+      },
+      {
+        "name": "B.A. Persian",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG: 150-200",
+        "fees": "₹7,400-15,600"
+      },
+      {
+        "name": "B.Sc. Physics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Sc. Chemistry",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Sc. Mathematics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Sc. Botany",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCB (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Sc. Zoology",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCB (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Sc. Geography",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Sc. Geology",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Sc. Electronics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Sc. Computer Applications",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Sc. Nano-Technology",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Sc. Home Science",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG: 160-210",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Com",
+        "stream": "Commerce",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG: 155-205",
+        "fees": "₹8,300-15,600"
+      },
+      {
+        "name": "B.Tech Electronics & Communication",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main: 50,000-80,000",
+        "fees": "₹40,600-1.8L"
+      }
     ],
-    facilities: ["Library", "Hostel", "Computer Lab", "Sports Complex", "WiFi"],
-    contact: {
-      phone: "+91 22 1234 5678",
-      email: "info@gcas-mumbai.edu.in",
-      website: "www.gcas-mumbai.edu.in"
-    },
-    rating: 4.2,
-    distance: "2.5 km"
+    "facilities": [],
+    "contact": {},
+    "rating": null,
+    "distance": null
   },
   {
-    id: "2",
-    name: "Dr. A.P.J. Abdul Kalam Government College",
-    location: "Tech Park Area",
-    city: "Bangalore",
-    state: "Karnataka",
-    type: "Government",
-    establishedYear: 1995,
-    affiliation: "Bangalore University",
-    courses: [
-      { name: "B.Sc. Computer Science", stream: "Science", duration: "3 years", eligibility: "10+2 with Mathematics", cutoff: 92, fees: 25000 },
-      { name: "B.Com (Hons)", stream: "Commerce", duration: "3 years", eligibility: "10+2", cutoff: 90, fees: 22000 },
-      { name: "BBA", stream: "Commerce", duration: "3 years", eligibility: "10+2", cutoff: 87, fees: 28000 }
+    "id": "2",
+    "name": "University of Jammu",
+    "location": "Jammu",
+    "city": "Jammu",
+    "state": "Jammu and Kashmir",
+    "type": "Government (State)",
+    "establishedYear": 1969,
+    "affiliation": "N/A",
+    "courses": [
+      {
+        "name": "B.A. English",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,000-16,000"
+      },
+      {
+        "name": "B.A. Hindi",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,000-16,000"
+      },
+      {
+        "name": "B.A. History",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,000-16,000"
+      },
+      {
+        "name": "B.A. Political Science",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,000-16,000"
+      },
+      {
+        "name": "B.A. Economics",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,000-16,000"
+      },
+      {
+        "name": "B.A. Geography",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,000-16,000"
+      },
+      {
+        "name": "B.A. Dogri",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,000-16,000"
+      },
+      {
+        "name": "B.A. Punjabi",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,000-16,000"
+      },
+      {
+        "name": "B.A. Sanskrit",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (40%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,000-16,000"
+      },
+      {
+        "name": "B.Sc. Physics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Sc. Chemistry",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Sc. Mathematics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Sc. Botany",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCB (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Sc. Zoology",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCB (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Sc. Geology",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Sc. Statistics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Sc. Environmental Sciences",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Sc. Bio-Technology",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCB (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Sc. Microbiology",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCB (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Com",
+        "stream": "Commerce",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "B.Com (Honours)",
+        "stream": "Commerce",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹8,500-16,000"
+      },
+      {
+        "name": "BCA",
+        "stream": "Computer Applications",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹25,000-35,000"
+      },
+      {
+        "name": "BBA",
+        "stream": "Management",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG/Merit",
+        "fees": "₹25,000-35,000"
+      },
+      {
+        "name": "B.Tech Computer Science & Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main/JKCET",
+        "fees": "₹1.8L"
+      },
+      {
+        "name": "B.Tech Information Technology",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main/JKCET",
+        "fees": "₹1.8L"
+      },
+      {
+        "name": "B.Tech Civil Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main/JKCET",
+        "fees": "₹1.86L"
+      },
+      {
+        "name": "B.Tech Mechanical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main/JKCET",
+        "fees": "₹1.8L"
+      },
+      {
+        "name": "LL.B",
+        "stream": "Law",
+        "duration": "3 Years",
+        "eligibility": "Graduation (45%)",
+        "cutoff": "CLAT/University Test",
+        "fees": "₹25,000"
+      },
+      {
+        "name": "BA LL.B",
+        "stream": "Law",
+        "duration": "5 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CLAT/University Test",
+        "fees": "₹25,000"
+      }
     ],
-    facilities: ["Digital Library", "Hostel", "Computer Lab", "Innovation Center", "WiFi", "Canteen"],
-    contact: {
-      phone: "+91 80 9876 5432",
-      email: "admissions@apjgc-blr.edu.in",
-      website: "www.apjgc-bangalore.edu.in"
-    },
-    rating: 4.5,
-    distance: "5.8 km"
+    "facilities": [],
+    "contact": {},
+    "rating": null,
+    "distance": null
   },
   {
-    id: "3",
-    name: "Mahatma Gandhi Government College",
-    location: "Civil Lines",
-    city: "Delhi",
-    state: "Delhi",
-    type: "Government",
-    establishedYear: 1948,
-    affiliation: "Delhi University",
-    courses: [
-      { name: "B.A. (Political Science)", stream: "Arts", duration: "3 years", eligibility: "10+2", cutoff: 89, fees: 12000 },
-      { name: "B.A. (History)", stream: "Arts", duration: "3 years", eligibility: "10+2", cutoff: 85, fees: 12000 },
-      { name: "B.Com", stream: "Commerce", duration: "3 years", eligibility: "10+2", cutoff: 91, fees: 16000 }
+    "id": "3",
+    "name": "Indian Institute of Technology (IIT) Jammu",
+    "location": "Jammu",
+    "city": "Jammu",
+    "state": "Jammu and Kashmir",
+    "type": "Government (Central)",
+    "establishedYear": 2016,
+    "affiliation": "N/A",
+    "courses": [
+      {
+        "name": "B.Tech Computer Science & Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Advanced: 5,988-18,156",
+        "fees": "₹8.3L"
+      },
+      {
+        "name": "B.Tech Chemical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Advanced: 11,491-14,513",
+        "fees": "₹8.3L"
+      },
+      {
+        "name": "B.Tech Mechanical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Advanced: 9,201-12,989",
+        "fees": "₹8.3L"
+      },
+      {
+        "name": "B.Tech Materials Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Advanced: 12,421-14,983",
+        "fees": "₹8.3L"
+      },
+      {
+        "name": "B.Tech Electrical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Advanced: 6,960-9,988",
+        "fees": "₹8.3L"
+      },
+      {
+        "name": "B.Tech Civil Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Advanced: 11,504-14,700",
+        "fees": "₹8.3L"
+      },
+      {
+        "name": "M.Tech Computer Science & Engineering (Data Science)",
+        "stream": "Engineering",
+        "duration": "2 Years",
+        "eligibility": "B.Tech (60%)",
+        "cutoff": "GATE: 300-550",
+        "fees": "₹1.03L"
+      },
+      {
+        "name": "M.Tech Computer Science & Engineering (Information Security)",
+        "stream": "Engineering",
+        "duration": "2 Years",
+        "eligibility": "B.Tech (60%)",
+        "cutoff": "GATE: 300-550",
+        "fees": "₹1.03L"
+      },
+      {
+        "name": "M.Tech Electrical Engineering (Communications)",
+        "stream": "Engineering",
+        "duration": "2 Years",
+        "eligibility": "B.Tech EE (60%)",
+        "cutoff": "GATE: 300-550",
+        "fees": "₹1.03L"
+      },
+      {
+        "name": "M.Tech Civil Engineering (Tunnel Engineering)",
+        "stream": "Engineering",
+        "duration": "2 Years",
+        "eligibility": "B.Tech CE (60%)",
+        "cutoff": "GATE: 300-550",
+        "fees": "₹1.03L"
+      },
+      {
+        "name": "M.Sc. Physics",
+        "stream": "Science",
+        "duration": "2 Years",
+        "eligibility": "B.Sc. Physics (60%)",
+        "cutoff": "IIT JAM: 714-759",
+        "fees": "₹49,300"
+      },
+      {
+        "name": "M.Sc. Chemistry",
+        "stream": "Science",
+        "duration": "2 Years",
+        "eligibility": "B.Sc. Chemistry (60%)",
+        "cutoff": "IIT JAM: 714-759",
+        "fees": "₹49,300"
+      }
     ],
-    facilities: ["Central Library", "Boys Hostel", "Girls Hostel", "Auditorium", "WiFi"],
-    contact: {
-      phone: "+91 11 2345 6789",
-      email: "info@mggc-delhi.edu.in",
-      website: "www.mggc-delhi.edu.in"
-    },
-    rating: 4.0,
-    distance: "3.2 km"
+    "facilities": [],
+    "contact": {},
+    "rating": null,
+    "distance": null
+  },
+  {
+    "id": "4",
+    "name": "National Institute of Technology (NIT) Srinagar",
+    "location": "Srinagar",
+    "city": "Srinagar",
+    "state": "Jammu and Kashmir",
+    "type": "Government (Central)",
+    "establishedYear": 1960,
+    "affiliation": "N/A",
+    "courses": [
+      {
+        "name": "B.Tech Computer Science & Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 26,253",
+        "fees": "₹6.03L"
+      },
+      {
+        "name": "B.Tech Electronics & Communication",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 36,676",
+        "fees": "₹6.03L"
+      },
+      {
+        "name": "B.Tech Information Technology",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 30,958",
+        "fees": "₹6.03L"
+      },
+      {
+        "name": "B.Tech Electrical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 45,495",
+        "fees": "₹6.03L"
+      },
+      {
+        "name": "B.Tech Mechanical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 52,104",
+        "fees": "₹6.03L"
+      },
+      {
+        "name": "B.Tech Civil Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 57,541",
+        "fees": "₹6.03L"
+      },
+      {
+        "name": "B.Tech Chemical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 56,504",
+        "fees": "₹6.03L"
+      },
+      {
+        "name": "B.Tech Metallurgical & Materials",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 58,665",
+        "fees": "₹6.03L"
+      },
+      {
+        "name": "M.Tech Computer Science & Engineering",
+        "stream": "Engineering",
+        "duration": "2 Years",
+        "eligibility": "B.Tech (60%)",
+        "cutoff": "GATE: 350-529",
+        "fees": "₹1.08L"
+      },
+      {
+        "name": "M.Tech Structural Engineering",
+        "stream": "Engineering",
+        "duration": "2 Years",
+        "eligibility": "B.Tech CE (60%)",
+        "cutoff": "GATE: 350-529",
+        "fees": "₹1.08L"
+      },
+      {
+        "name": "M.Tech Microelectronics",
+        "stream": "Engineering",
+        "duration": "2 Years",
+        "eligibility": "B.Tech ECE (60%)",
+        "cutoff": "GATE: 350-529",
+        "fees": "₹1.08L"
+      },
+      {
+        "name": "M.Tech Water Resources Engineering",
+        "stream": "Engineering",
+        "duration": "2 Years",
+        "eligibility": "B.Tech CE (60%)",
+        "cutoff": "GATE: 350-529",
+        "fees": "₹1.08L"
+      },
+      {
+        "name": "M.Sc. Chemistry",
+        "stream": "Science",
+        "duration": "2 Years",
+        "eligibility": "B.Sc. Chemistry (60%)",
+        "cutoff": "IIT JAM",
+        "fees": "₹1.2L"
+      },
+      {
+        "name": "M.Sc. Physics",
+        "stream": "Science",
+        "duration": "2 Years",
+        "eligibility": "B.Sc. Physics (60%)",
+        "cutoff": "IIT JAM",
+        "fees": "₹1.2L"
+      },
+      {
+        "name": "MBA",
+        "stream": "Management",
+        "duration": "2 Years",
+        "eligibility": "Graduation (60%)",
+        "cutoff": "CAT",
+        "fees": "₹5.4L"
+      }
+    ],
+    "facilities": [],
+    "contact": {},
+    "rating": null,
+    "distance": null
+  },
+  {
+    "id": "5",
+    "name": "Shri Mata Vaishno Devi University (SMVDU)",
+    "location": "Katra, Reasi",
+    "city": "Katra",
+    "state": "Jammu and Kashmir",
+    "type": "Government (State)",
+    "establishedYear": 1999,
+    "affiliation": "N/A",
+    "courses": [
+      {
+        "name": "B.Tech Computer Science & Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 53,182-77,606",
+        "fees": "₹5.28L"
+      },
+      {
+        "name": "B.Tech Electronics & Communication",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 53,182-87,372",
+        "fees": "₹1.41L"
+      },
+      {
+        "name": "B.Tech Mechanical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 53,182-91,814",
+        "fees": "₹1.41L"
+      },
+      {
+        "name": "B.Tech Electrical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 60,000-95,000",
+        "fees": "₹1.41L"
+      },
+      {
+        "name": "B.Tech Civil Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 65,000-100,000",
+        "fees": "₹1.41L"
+      },
+      {
+        "name": "B.Tech Food Technology",
+        "stream": "Engineering",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCB (75%)",
+        "cutoff": "CUET UG",
+        "fees": "₹3.6L"
+      },
+      {
+        "name": "B.Tech Robotics & AI",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (75%)",
+        "cutoff": "JEE Main: 70,000-105,000",
+        "fees": "₹1.41L"
+      },
+      {
+        "name": "B.Arch",
+        "stream": "Architecture",
+        "duration": "5 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "JEE Main/NATA: 1,200-3,000",
+        "fees": "₹5.5L"
+      },
+      {
+        "name": "B.Sc. Physics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.4L-1.6L"
+      },
+      {
+        "name": "B.Sc. Chemistry",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.4L-1.6L"
+      },
+      {
+        "name": "B.Sc. Mathematics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.4L-1.6L"
+      },
+      {
+        "name": "B.Sc. Microbiology",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCB (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.4L-1.6L"
+      },
+      {
+        "name": "BBA",
+        "stream": "Management",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹2.5L"
+      },
+      {
+        "name": "B.A. English",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.4L-1.8L"
+      },
+      {
+        "name": "B.A. Economics",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.4L-1.8L"
+      },
+      {
+        "name": "Integrated M.Sc. Physics",
+        "stream": "Science",
+        "duration": "5 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹2.66L"
+      },
+      {
+        "name": "Integrated M.Sc. Mathematics",
+        "stream": "Science",
+        "duration": "5 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹2.66L"
+      }
+    ],
+    "facilities": [],
+    "contact": {},
+    "rating": null,
+    "distance": null
+  },
+  {
+    "id": "6",
+    "name": "Islamic University of Science and Technology (IUST)",
+    "location": "Awantipora, Pulwama",
+    "city": "Pulwama",
+    "state": "Jammu and Kashmir",
+    "type": "Government (State)",
+    "establishedYear": "N/A",
+    "affiliation": "N/A",
+    "courses": [
+      {
+        "name": "B.Tech Computer Science & Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main: State Quota",
+        "fees": "₹2.48L"
+      },
+      {
+        "name": "B.Tech Civil Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main: State Quota",
+        "fees": "₹1.8L-2.5L"
+      },
+      {
+        "name": "B.Tech Electrical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main: State Quota",
+        "fees": "₹1.8L-2.5L"
+      },
+      {
+        "name": "B.Tech Mechanical Engineering",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main: State Quota",
+        "fees": "₹1.8L-2.5L"
+      },
+      {
+        "name": "B.Tech Electronics & Communication",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main: State Quota",
+        "fees": "₹1.8L-2.5L"
+      },
+      {
+        "name": "B.Tech Food Technology",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCB (45%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.8L-2.5L"
+      },
+      {
+        "name": "B.Tech Robotics & Automation",
+        "stream": "Engineering",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "JEE Main: State Quota",
+        "fees": "₹1.8L-2.5L"
+      },
+      {
+        "name": "B.Sc. Physics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.2L-2.8L"
+      },
+      {
+        "name": "B.Sc. Chemistry",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.2L-2.8L"
+      },
+      {
+        "name": "B.Sc. Mathematics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (45%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.2L-2.8L"
+      },
+      {
+        "name": "B.Sc. Environmental Science",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 (45%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.2L-2.8L"
+      },
+      {
+        "name": "BBA",
+        "stream": "Management",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹2.7L"
+      }
+    ],
+    "facilities": [],
+    "contact": {},
+    "rating": null,
+    "distance": null
+  },
+  {
+    "id": "7",
+    "name": "Central University of Jammu",
+    "location": "Jammu",
+    "city": "Jammu",
+    "state": "Jammu and Kashmir",
+    "type": "Government (Central)",
+    "establishedYear": "N/A",
+    "affiliation": "N/A",
+    "courses": [
+      {
+        "name": "B.A. English",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.A. Hindi",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.A. Economics",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.Sc. Physics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.Sc. Chemistry",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.Sc. Mathematics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.Sc. Botany",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCB (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.Sc. Zoology",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCB (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "Integrated B.Sc.-M.Sc. Physics",
+        "stream": "Science",
+        "duration": "5 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹48,790"
+      },
+      {
+        "name": "Integrated B.Sc.-M.Sc. Chemistry",
+        "stream": "Science",
+        "duration": "5 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹48,790"
+      },
+      {
+        "name": "Integrated B.Sc.-M.Sc. Zoology",
+        "stream": "Science",
+        "duration": "5 Years",
+        "eligibility": "10+2 PCB (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹1.06L"
+      },
+      {
+        "name": "Integrated B.A.-B.Ed",
+        "stream": "Education",
+        "duration": "4 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹48,790"
+      },
+      {
+        "name": "MBA",
+        "stream": "Management",
+        "duration": "2 Years",
+        "eligibility": "Graduation (50%)",
+        "cutoff": "CAT/CMAT",
+        "fees": "₹5.49L"
+      }
+    ],
+    "facilities": [],
+    "contact": {},
+    "rating": null,
+    "distance": null
+  },
+  {
+    "id": "8",
+    "name": "Central University of Kashmir",
+    "location": "Srinagar",
+    "city": "Srinagar",
+    "state": "Jammu and Kashmir",
+    "type": "Government (Central)",
+    "establishedYear": "N/A",
+    "affiliation": "N/A",
+    "courses": [
+      {
+        "name": "B.A. English Literature",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.A. Geography",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.A. History",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.A. Political Science",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.A. Psychology",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.A. Kashmiri Literature",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.A. Urdu Literature",
+        "stream": "Arts",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.Sc. Physics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.Sc. Mathematics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.Sc. Electronics",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 PCM (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.Sc. Computer Applications",
+        "stream": "Science",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "B.Com",
+        "stream": "Commerce",
+        "duration": "3 Years",
+        "eligibility": "10+2 (50%)",
+        "cutoff": "CUET UG",
+        "fees": "₹15,000-25,000"
+      },
+      {
+        "name": "M.A. English",
+        "stream": "Arts",
+        "duration": "2 Years",
+        "eligibility": "Graduation (50%)",
+        "cutoff": "CUET PG",
+        "fees": "₹20,000-40,000"
+      },
+      {
+        "name": "M.A. Convergent Journalism",
+        "stream": "Arts",
+        "duration": "2 Years",
+        "eligibility": "Graduation (50%)",
+        "cutoff": "CUET PG",
+        "fees": "₹20,000-40,000"
+      },
+      {
+        "name": "M.Tech Computer Science & Engineering",
+        "stream": "Engineering",
+        "duration": "2 Years",
+        "eligibility": "B.Tech CSE (55%)",
+        "cutoff": "GATE",
+        "fees": "₹1.69L"
+      }
+    ],
+    "facilities": [],
+    "contact": {},
+    "rating": null,
+    "distance": null
+  },
+  {
+    "id": "9",
+    "name": "All India Institute of Medical Sciences (AIIMS) Jammu, Vijaypur",
+    "location": "Vijaypur, Samba",
+    "city": "Jammu",
+    "state": "Jammu and Kashmir",
+    "type": "Government (Central)",
+    "establishedYear": 2021,
+    "affiliation": "N/A",
+    "courses": [
+      {
+        "name": "MBBS",
+        "stream": "Medical",
+        "duration": "5.5 Years",
+        "eligibility": "10+2 PCB (50%)",
+        "cutoff": "NEET UG: 3,389 rank",
+        "fees": "₹29,280"
+      },
+      {
+        "name": "B.Sc. (Hons.) Nursing",
+        "stream": "Nursing",
+        "duration": "4 Years",
+        "eligibility": "10+2 PCB (45%)",
+        "cutoff": "NEET UG: 1,600 rank",
+        "fees": "₹6,365"
+      },
+      {
+        "name": "M.D. General Medicine",
+        "stream": "Medical",
+        "duration": "3 Years",
+        "eligibility": "MBBS (55%)",
+        "cutoff": "INI-CET: 518-29,603",
+        "fees": "₹5,111"
+      },
+      {
+        "name": "M.D. Pediatrics",
+        "stream": "Medical",
+        "duration": "3 Years",
+        "eligibility": "MBBS (55%)",
+        "cutoff": "INI-CET: 518-29,603",
+        "fees": "₹5,111"
+      },
+      {
+        "name": "M.D. Anaesthesia",
+        "stream": "Medical",
+        "duration": "3 Years",
+        "eligibility": "MBBS (55%)",
+        "cutoff": "INI-CET",
+        "fees": "₹5,111"
+      },
+      {
+        "name": "M.S. General Surgery",
+        "stream": "Medical",
+        "duration": "3 Years",
+        "eligibility": "MBBS (55%)",
+        "cutoff": "INI-CET",
+        "fees": "₹5,111"
+      },
+      {
+        "name": "M.S. Orthopedics",
+        "stream": "Medical",
+        "duration": "3 Years",
+        "eligibility": "MBBS (55%)",
+        "cutoff": "INI-CET",
+        "fees": "₹5,111"
+      },
+      {
+        "name": "DM Cardiology",
+        "stream": "Medical",
+        "duration": "3 Years",
+        "eligibility": "MD/MS (55%)",
+        "cutoff": "INI-CET",
+        "fees": "₹5,111"
+      },
+      {
+        "name": "M.Ch. Neurosurgery",
+        "stream": "Medical",
+        "duration": "3 Years",
+        "eligibility": "MD/MS (55%)",
+        "cutoff": "INI-CET",
+        "fees": "₹5,111"
   }
 ];
 
