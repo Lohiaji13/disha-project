@@ -1,13 +1,13 @@
 import { useState, useMemo } from "react";
-import { 
-  MapPin, 
-  Search, 
-  Filter, 
-  Star, 
-  Users, 
-  BookOpen, 
-  Wifi, 
-  Home, 
+import {
+  MapPin,
+  Search,
+  Filter,
+  Star,
+  Users,
+  BookOpen,
+  Wifi,
+  Home,
   Building,
   Phone,
   Mail,
@@ -115,12 +115,12 @@ export default function Colleges() {
   const filteredColleges = useMemo(() => {
     const filtered = mockColleges.filter(college => {
       const matchesSearch = college.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           college.city.toLowerCase().includes(searchQuery.toLowerCase());
+        college.city.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesState = selectedState === "all" || college.state === selectedState;
-      const matchesStream = selectedStream === "all" || 
-                           college.courses.some(course => course.stream === selectedStream);
+      const matchesStream = selectedStream === "all" ||
+        college.courses.some(course => course.stream === selectedStream);
       const matchesFacilities = selectedFacilities.length === 0 ||
-                               selectedFacilities.every(facility => college.facilities.includes(facility));
+        selectedFacilities.every(facility => college.facilities.includes(facility));
 
       return matchesSearch && matchesState && matchesStream && matchesFacilities;
     });
@@ -145,7 +145,7 @@ export default function Colleges() {
   }, [searchQuery, selectedState, selectedStream, selectedFacilities, sortBy]);
 
   const handleFacilityToggle = (facility: string) => {
-    setSelectedFacilities(prev => 
+    setSelectedFacilities(prev =>
       prev.includes(facility)
         ? prev.filter(f => f !== facility)
         : [...prev, facility]
@@ -199,7 +199,7 @@ export default function Colleges() {
           </Button>
         </div>
       </CardHeader>
-      
+
       <CardContent>
         <Tabs defaultValue="courses">
           <TabsList className="grid w-full grid-cols-3">
@@ -207,7 +207,7 @@ export default function Colleges() {
             <TabsTrigger value="facilities">Facilities</TabsTrigger>
             <TabsTrigger value="contact">Contact</TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="courses" className="space-y-3 mt-4">
             {college.courses.slice(0, 2).map((course, index) => (
               <div key={index} className="p-3 border rounded-lg">
@@ -229,7 +229,7 @@ export default function Colleges() {
               </Button>
             )}
           </TabsContent>
-          
+
           <TabsContent value="facilities" className="mt-4">
             <div className="grid grid-cols-2 gap-2">
               {college.facilities.map((facility, index) => (
@@ -240,7 +240,7 @@ export default function Colleges() {
               ))}
             </div>
           </TabsContent>
-          
+
           <TabsContent value="contact" className="space-y-3 mt-4">
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
@@ -264,7 +264,7 @@ export default function Colleges() {
             </div>
           </TabsContent>
         </Tabs>
-        
+
         <div className="flex gap-2 mt-4">
           <Button className="flex-1">
             Apply Now
@@ -389,7 +389,7 @@ export default function Colleges() {
                   Showing government colleges matching your criteria
                 </p>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <Select value={sortBy} onValueChange={setSortBy}>
                   <SelectTrigger className="w-40">
@@ -405,7 +405,33 @@ export default function Colleges() {
               </div>
             </div>
 
-            {/* College Cards */}
+            {/* College Cards - orginial code*/}
+            {/* {filteredColleges.length === 0 ? (
+              <Card className="p-8 text-center">
+                <div className="space-y-4">
+                  <MapPin className="h-12 w-12 text-gray-400 mx-auto" />
+                  <div>
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">
+                      No colleges found
+                    </h3>
+                    <p className="text-gray-600">
+                      Try adjusting your filters to see more results
+                    </p>
+                  </div>
+                  <Button onClick={clearFilters} variant="outline">
+                    Clear Filters
+                  </Button>
+                </div>
+              </Card>
+            ) : (
+                <div className="space-y-6">
+                  {filteredColleges.map(college => (
+                    <CollegeCard key={college.id} college={college} />
+                  ))}
+                </div>
+              )} */}
+
+
             {filteredColleges.length === 0 ? (
               <Card className="p-8 text-center">
                 <div className="space-y-4">
@@ -424,12 +450,15 @@ export default function Colleges() {
                 </div>
               </Card>
             ) : (
-              <div className="space-y-6">
-                {filteredColleges.map(college => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredColleges.map((college) => (
                   <CollegeCard key={college.id} college={college} />
                 ))}
               </div>
             )}
+
+
+
 
             {/* Load More */}
             {filteredColleges.length > 0 && (
