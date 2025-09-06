@@ -1435,7 +1435,7 @@ export default function Colleges() {
   const [selectedState, setSelectedState] = useState("all");
   const [selectedStream, setSelectedStream] = useState("all");
   const [selectedFacilities, setSelectedFacilities] = useState<string[]>([]);
-  const [sortBy, setSortBy] = useState("distance");
+  const [sortBy, setSortBy] = useState("rating");                              //default sorting by rating - removed distance sorting as distance data is not available
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const allStates = [...new Set(mockColleges.map(college => college.state))];
@@ -1757,9 +1757,9 @@ export default function Colleges() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="distance">Nearest First</SelectItem>
-                    <SelectItem value="rating">Highest Rated</SelectItem>
-                    <SelectItem value="name">Name A-Z</SelectItem>
+                    <SelectItem value="rating">Highest Rated</SelectItem>   
+                    {/* <SelectItem value="distance">Nearest First</SelectItem>   Removed distance sorting as distance data is not available */}
+                    <SelectItem value="name">Name A-Z</SelectItem> 
                     <SelectItem value="established">Newest First</SelectItem>
                   </SelectContent>
                 </Select>
