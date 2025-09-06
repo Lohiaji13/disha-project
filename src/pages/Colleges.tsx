@@ -1,3 +1,4 @@
+
 import { useState, useMemo } from "react";
 import {
   MapPin,
@@ -14,8 +15,18 @@ import {
   Globe,
   ChevronRight,
   Heart,
-  ExternalLink
+  ExternalLink,
+  FlaskConical,
+  Hospital,
+  Trophy,
+  Landmark,
+  Coffee,
+  Microscope, 
+  Presentation, 
+  Laptop
 } from "lucide-react";
+
+
 
 import { Button } from "@/components/ui/button.tsx";
 import { Input } from "@/components/ui/input.tsx";
@@ -26,6 +37,8 @@ import { Checkbox } from "@/components/ui/checkbox.tsx";
 import { Label } from "@/components/ui/label.tsx";
 import { Separator } from "@/components/ui/separator.tsx";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs.tsx";
+
+
 
 // Mock data - in real app, this would come from the backend
 const mockColleges = [
@@ -224,11 +237,20 @@ const mockColleges = [
         "fees": "₹40,600-1.8L"
       }
     ],
-    "facilities": [],
-    "contact": {},
-    "rating": null,
-    "distance": null
+
+
+    "facilities": ["Central Library", "Hostel (Boys/Girls)", "Sports Complex", "Medical Center", "Cafeteria", "Auditorium", "WiFi", "Labs", "Research Centers"],
+
+    "contact": {
+      "phone": "+91-194-2272041, +91-194-2272041",
+      "email": "info@kashmiruniversity.net",
+      "website": "https://www.kashmiruniversity.net",
+      "address": "University of Kashmir, Hazratbal, Srinagar, Jammu and Kashmir 190006"
+    },
+    "rating": 3.7,
+    // "distance": 2744 // Distance in km from current location (example value)
   },
+
   {
     "id": "2",
     "name": "University of Jammu",
@@ -1326,7 +1348,86 @@ const mockColleges = [
         "eligibility": "MD/MS (55%)",
         "cutoff": "INI-CET",
         "fees": "₹5,111"
+      }
+    ],
+    "facilities": [],
+    "contact": {},
+    "rating": null,
+    "distance": null
+  },
+
+  {
+    "id": "10",
+    "name": "Indian Institute of Management (IIM) Jammu",
+    "location": "Jagti, Jammu",
+    "city": "Jammu",
+    "state": "Jammu and Kashmir",
+    "type": "Government (Central)",
+    "establishedYear": 2016,
+    "affiliation": "N/A",
+    "courses": [
+      {
+        "name": "MBA General Management",
+        "stream": "Management",
+        "duration": "2 Years",
+        "eligibility": "Graduation (50%)",
+        "cutoff": "CAT: 95 percentile",
+        "fees": "₹20.88L"
+      },
+      {
+        "name": "MBA Business Analytics",
+        "stream": "Management",
+        "duration": "2 Years",
+        "eligibility": "Graduation (50%)",
+        "cutoff": "CAT: 95 percentile",
+        "fees": "₹20.94L"
+      },
+      {
+        "name": "Executive MBA",
+        "stream": "Management",
+        "duration": "2 Years",
+        "eligibility": "Graduation + 5 yrs exp",
+        "cutoff": "CAT / Work Experience",
+        "fees": "₹11.12L"
+      },
+      {
+        "name": "IPM (Integrated BBA+MBA)",
+        "stream": "Management",
+        "duration": "5 Years",
+        "eligibility": "10+2 (60%)",
+        "cutoff": "JIPMAT",
+        "fees": "₹30.79L"
+      },
+      {
+        "name": "Ph.D. Management",
+        "stream": "Research",
+        "duration": "3-5 Years",
+        "eligibility": "Master's (55%)",
+        "cutoff": "Written Test / Interview",
+        "fees": "₹1.8L"
+      }
+    ],
+    "facilities": [
+      "200-acre permanent campus",
+      "Modern Classrooms",
+      "Library",
+      "Computer Center",
+      "Hostels",
+      "Sports Complex",
+      "Auditorium"
+    ],
+    "contact": {
+      "phone": "0191-2741400 (Main Campus)",
+      "website": "https://www.iimj.ac.in",
+      "address": "Jagti, Jammu - 181221, J&K, India"
+    },
+    "rating": null,
+    "distance": null
   }
+
+
+
+
 ];
 
 export default function Colleges() {
@@ -1339,7 +1440,7 @@ export default function Colleges() {
 
   const allStates = [...new Set(mockColleges.map(college => college.state))];
   const allStreams = [...new Set(mockColleges.flatMap(college => college.courses.map(course => course.stream)))];
-  const allFacilities = [...new Set(mockColleges.flatMap(college => college.facilities))];
+  const allFacilities = [...new Set(mockColleges.flatMap(college => college.facilities))] as string[];
 
   const filteredColleges = useMemo(() => {
     const filtered = mockColleges.filter(college => {
@@ -1357,14 +1458,20 @@ export default function Colleges() {
     // Sort colleges
     filtered.sort((a, b) => {
       switch (sortBy) {
-        case "distance":
-          return parseFloat(a.distance) - parseFloat(b.distance);
+        // case "distance":
+        // const aDist = a.distance ? parseFloat(a.distance) : Infinity;     //Removed distance sorting as distance data is not available
+        //   const bDist = b.distance ? parseFloat(b.distance) : Infinity;
+        //   return aDist - bDist;
         case "rating":
-          return b.rating - a.rating;
+          const aRating = a.rating || 0;
+          const bRating = b.rating || 0;
+          return bRating - aRating;
         case "name":
           return a.name.localeCompare(b.name);
         case "established":
-          return b.establishedYear - a.establishedYear;
+          const aYear = typeof a.establishedYear === 'number' ? a.establishedYear : 0;
+          const bYear = typeof b.establishedYear === 'number' ? b.establishedYear : 0;
+          return bYear - aYear;
         default:
           return 0;
       }
@@ -1391,14 +1498,33 @@ export default function Colleges() {
 
   const getFacilityIcon = (facility: string) => {
     switch (facility.toLowerCase()) {
-      case "library": case "digital library": case "central library":
+      case "library": case "digital library": case "central library": case "dhanvantri library": case "libraries":
         return <BookOpen className="h-4 w-4" />;
-      case "hostel": case "boys hostel": case "girls hostel":
-        return <Home className="h-4 w-4" />;
-      case "wifi":
-        return <Wifi className="h-4 w-4" />;
-      case "computer lab": case "innovation center":
+      case "hostel": case "boys hostel": case "girls hostel": case "hostel (boys/girls)": case "2 girls hostels": case "8 boys hostels": case "hostels": case "hostels(ac)": case "limited hostels": case "multiple hostels": case "guest house":
         return <Building className="h-4 w-4" />;
+      case "wifi": case "24/7 wi-fi":
+        return <Wifi className="h-4 w-4" />;
+      case "computer lab": case "innovation center": case "computer center": case "computer centers": case "computer labs": case "ict labs":
+        return <Laptop className="h-4 w-4" />;
+      case "labs": case "50+ labs": case "agricultural labs": case "basic labs":  case "engineering labs":  case "labs": case "modern labs": case "nursing labs": case "research labs": case "central instrumentation facility:":
+        return <FlaskConical className="h-4 w-4" />;
+      case "medical facilities": case "health center": case "medical center": case "associated hospitals": case "clinical training": case "clinical facilities": case "digital healthcare": case "hospital attached": case "hospital attachment":
+      case "medical center": case "medical equipment": case "medical labs": case "medical unit": case "modern medical equipment": case "state-of-art medical facilities": case "super specialty hospital": case "super specialty services":
+      case "veterinary hospital": case "cardiology center":
+        return <Hospital className="h-4 w-4" />;
+      case "sports complex": case "sports facilities": case "gym": case "sports ground":
+        return <Trophy className="h-4 w-4" />;
+      case "cafeteria": case "food court": case "dining hall": case "canteen": case "mess":
+        return <Coffee className="h-4 w-4" />;
+      case "research centers": case "research facilities": case "research lab": case "research": case "research farms":
+        return <Microscope className="h-4 w-4" />;
+      case "auditorium": case "conference hall": case "seminar hall": case "amphitheater": case "auditorium/seminar hall": case "auditorium/conference hall": case "hall": case "conference halls": case "workshops":
+        return <Landmark className="h-4 w-4" />;
+        case "modern classrooms": case "basic facilities - classrooms":
+        return <Presentation className="h-4 w-4" />;
+      case "200-acre permanent campus": case "227-acre main campus": case "400 acres campus": case "470-acre residential campus": case "610-acre campus": case "dal lake campus": case "modern campus": case "modern classrooms": case "multiple campuses": 
+      case "experimental farms": case "shopping complex": case "mosque":
+        return <Star className="h-4 w-4" />;
       default:
         return <Star className="h-4 w-4" />;
     }
@@ -1415,11 +1541,11 @@ export default function Colleges() {
               {college.location}, {college.city}, {college.state}
             </CardDescription>
             <div className="flex items-center gap-4 text-sm text-gray-600">
-              <span>Est. {college.establishedYear}</span>
+              <span>Est. {college.establishedYear || 'N/A'}</span>
               <Badge variant="outline">{college.type}</Badge>
               <div className="flex items-center gap-1">
                 <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                <span>{college.rating}</span>
+                <span>{college.rating || 'N/A'}</span>
               </div>
             </div>
           </div>
@@ -1470,26 +1596,32 @@ export default function Colleges() {
             </div>
           </TabsContent>
 
+          {/*Contact Tab */}
+
           <TabsContent value="contact" className="space-y-3 mt-4">
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-gray-500" />
-                <span>{college.contact.phone}</span>
+                <span>{(college.contact as any)?.phone || 'N/A'}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-gray-500" />
-                <span>{college.contact.email}</span>
+                <span>{(college.contact as any)?.email || 'N/A'}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Globe className="h-4 w-4 text-gray-500" />
-                <a href={`https://${college.contact.website}`} className="text-blue-600 hover:underline">
-                  {college.contact.website}
-                </a>
+                {(college.contact as any)?.website ? (
+                  <a href={`https://${(college.contact as any).website}`} className="text-blue-600 hover:underline">
+                    {(college.contact as any).website}
+                  </a>
+                ) : (
+                  <span>N/A</span>
+                )}
               </div>
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-gray-500" />
-                <span>{college.distance} away</span>
-              </div>
+                <span>{college.distance ? `${college.distance} away` : 'N/A'}</span>
+              </div> */}
             </div>
           </TabsContent>
         </Tabs>
