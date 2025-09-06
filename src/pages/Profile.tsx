@@ -83,7 +83,11 @@ const mockUserData = {
 };
 
 export default function Profile() {
-  const { name, email, avatar, isLoading } = useUser({ shouldRedirect: true });
+  // const { name, email, avatar, isLoading } = useUser({ shouldRedirect: true });  Page was not loading due to this line - resaon - we dont have any auth system yet
+  const name = mockUserData.personalInfo.name;
+const email = mockUserData.personalInfo.email;
+const avatar = ""; // you can put a URL string if you want
+const isLoading = false;
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState(mockUserData.personalInfo);
 
@@ -92,7 +96,6 @@ export default function Profile() {
     console.log("Saving profile data:", formData);
     setIsEditing(false);
   };
-
   const handleCancel = () => {
     setFormData(mockUserData.personalInfo);
     setIsEditing(false);

@@ -36,11 +36,11 @@ export default function Index() {
                 to={item.to}
                 className="relative group"
               >
-                <span className="text-gray-700 transition-colors duration-200 group-hover:text-blue-600">
+                <span className="text-gray-700 transition-colors duration-200 group-hover:text-black">
                   {item.label}
                 </span>
                 {/* underline effect */}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </nav>

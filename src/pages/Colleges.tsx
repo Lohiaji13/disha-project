@@ -1766,6 +1766,10 @@ export default function Colleges() {
               </div>
             </div>
 
+
+
+            
+
             {/* College Cards - orginial code*/}
             {/* {filteredColleges.length === 0 ? (
               <Card className="p-8 text-center">
