@@ -69,7 +69,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-gray-900">
-                {getGreeting()}, {name}!
+                {getGreeting()}, Ashwani Rathore! {/*{name} is supposed to come here but for testing, we have hardcoded it*/}
               </h1>
               <p className="text-gray-600">Ready to continue your educational journey?</p>
             </div>
