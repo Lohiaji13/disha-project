@@ -12,91 +12,43 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Header */}
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-40">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-
-          {/* Left - Logo */}
-          <div className="flex items-center gap-2">
-            <GraduationCap className="h-8 w-8 text-blue-600" />
-            <h1 className="text-xl font-bold text-gray-900">Disha</h1>
-          </div>
-
-          {/* Center - Navigation Links */}
-          <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
-            {[
-              { label: "Features", to: "#features" },
-              { label: "How it Works", to: "#how-it-works" },
-              { label: "Colleges", to: "/colleges" },
-              { label: "Contact Us", to: "#contact" },
-            ].map((item) => (
-              <Link
-                key={item.label}
-                to={item.to}
-                className="relative group"
-              >
-                <span className="text-gray-700 transition-colors duration-200 group-hover:text-black">
-                  {item.label}
-                </span>
-                {/* underline effect */}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
-          </nav>
-
-
-          {/* Right - Sign In / Dashboard */}
-          <div className="flex items-center gap-4">
-            {isAuthenticated ? (
-              <Button asChild>
-                <Link to="/dashboard">Dashboard</Link>
-              </Button>
-            ) : (
-              <SignInButton />
-            )}
-          </div>
-        </div>
-      </header>
-
-
       {/* Hero Section */}
-<section className="bg-blue-50 py-32"> {/* taller vertical padding */}
-  <div className="max-w-7xl mx-auto px-12 grid grid-cols-1 md:grid-cols-2 items-center gap-16">
-    
-    {/* Left Side Content */}
-    <div>
-      <h1 className="text-5xl font-bold text-gray-900 leading-tight">
-        Disha : Your Digital Career  & Education Advisor
-      </h1>
-      <p className="mt-6 text-lg text-gray-600">
-        Make informed academic decisions with personalized guidance, aptitude
-        assessments, and comprehensive information about government colleges
-        and career paths.
-      </p>
-      <div className="mt-10 flex space-x-4">
-        <button className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800">
-          Sign In
-        </button>
-        <Link to="/colleges">
-        <button className="px-6 py-3 bg-white border rounded-lg hover:bg-gray-100">
-          Explore Colleges
-        </button>
-        </Link>
-      </div>
-    </div>
+      <section className="bg-blue-50 py-32"> {/* taller vertical padding */}
+        <div className="max-w-7xl mx-auto px-12 grid grid-cols-1 md:grid-cols-2 items-center gap-16">
 
-    {/* Right Side Image */}
-    <div className="flex justify-center">
-      <img
-        src="growth.jpg"
-        alt="Career Guidance"
-        className="max-w-xl w-full h-auto rounded-lg shadow-lg"
-      />
-    </div>
+          {/* Left Side Content */}
+          <div>
+            <h1 className="text-5xl font-bold text-gray-900 leading-tight">
+              Disha : Your Digital Career  & Education Advisor
+            </h1>
+            <p className="mt-6 text-lg text-gray-600">
+              Make informed academic decisions with personalized guidance, aptitude
+              assessments, and comprehensive information about government colleges
+              and career paths.
+            </p>
+            <div className="mt-10 flex space-x-4">
+              <button className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800">
+                Sign In
+              </button>
+              <Link to="/colleges">
+                <button className="px-6 py-3 bg-white border rounded-lg hover:bg-gray-100">
+                  Explore Colleges
+                </button>
+              </Link>
+            </div>
+          </div>
 
-  </div>
-</section>
+          {/* Right Side Image */}
+          <div className="flex justify-center">
+            <img
+              src="growth.jpg"
+              alt="Career Guidance"
+              className="max-w-xl w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+
+        </div>
+      </section>
 
 
 
@@ -104,120 +56,120 @@ export default function Index() {
 
 
       {/* Features Section */}
-<section className="container mx-auto px-4 py-16">
-  <div className="text-center mb-12">
-    <h2 className="text-3xl font-bold text-gray-900 mb-4">
-      Everything You Need for Academic Success
-    </h2>
-    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-      Our comprehensive platform helps students make informed decisions about their educational journey
-    </p>
-  </div>
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Everything You Need for Academic Success
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Our comprehensive platform helps students make informed decisions about their educational journey
+          </p>
+        </div>
 
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-blue-500 hover:shadow-lg">
-      <CardHeader>
-        <Target className="h-12 w-12 text-blue-600 mb-4" />
-        <CardTitle>Aptitude Assessment</CardTitle>
-        <CardDescription>
-          Take comprehensive quizzes to discover your strengths, interests, and ideal career paths
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Button variant="ghost" className="p-0 h-auto" asChild>
-          <Link to="/assessment">
-            Start Assessment <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </Button>
-      </CardContent>
-    </Card>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-blue-500 hover:shadow-lg">
+            <CardHeader>
+              <Target className="h-12 w-12 text-blue-600 mb-4" />
+              <CardTitle>Aptitude Assessment</CardTitle>
+              <CardDescription>
+                Take comprehensive quizzes to discover your strengths, interests, and ideal career paths
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button variant="ghost" className="p-0 h-auto" asChild>
+                <Link to="/assessment">
+                  Start Assessment <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
 
-    <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-green-500 hover:shadow-lg">
-      <CardHeader>
-        <BookOpen className="h-12 w-12 text-green-600 mb-4" />
-        <CardTitle>Career Path Mapping</CardTitle>
-        <CardDescription>
-          Explore detailed career options, salary prospects, and growth opportunities for each degree
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Button variant="ghost" className="p-0 h-auto" asChild>
-          <Link to="/careers">
-            Explore Careers <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </Button>
-      </CardContent>
-    </Card>
+          <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-green-500 hover:shadow-lg">
+            <CardHeader>
+              <BookOpen className="h-12 w-12 text-green-600 mb-4" />
+              <CardTitle>Career Path Mapping</CardTitle>
+              <CardDescription>
+                Explore detailed career options, salary prospects, and growth opportunities for each degree
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button variant="ghost" className="p-0 h-auto" asChild>
+                <Link to="/careers">
+                  Explore Careers <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
 
-    <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-purple-500 hover:shadow-lg">
-      <CardHeader>
-        <MapPin className="h-12 w-12 text-purple-600 mb-4" />
-        <CardTitle>Government Colleges</CardTitle>
-        <CardDescription>
-          Find nearby government colleges with course details, eligibility, and facilities information
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Button variant="ghost" className="p-0 h-auto" asChild>
-          <Link to="/colleges">
-            Find Colleges <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </Button>
-      </CardContent>
-    </Card>
+          <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-purple-500 hover:shadow-lg">
+            <CardHeader>
+              <MapPin className="h-12 w-12 text-purple-600 mb-4" />
+              <CardTitle>Government Colleges</CardTitle>
+              <CardDescription>
+                Find nearby government colleges with course details, eligibility, and facilities information
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button variant="ghost" className="p-0 h-auto" asChild>
+                <Link to="/colleges">
+                  Find Colleges <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
 
-    <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-orange-500 hover:shadow-lg">
-      <CardHeader>
-        <Calendar className="h-12 w-12 text-orange-600 mb-4" />
-        <CardTitle>Important Dates</CardTitle>
-        <CardDescription>
-          Never miss admission deadlines, scholarship applications, or entrance exam dates
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Button variant="ghost" className="p-0 h-auto" asChild>
-          <Link to="/dashboard">
-            View Timeline <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </Button>
-      </CardContent>
-    </Card>
+          <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-orange-500 hover:shadow-lg">
+            <CardHeader>
+              <Calendar className="h-12 w-12 text-orange-600 mb-4" />
+              <CardTitle>Important Dates</CardTitle>
+              <CardDescription>
+                Never miss admission deadlines, scholarship applications, or entrance exam dates
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button variant="ghost" className="p-0 h-auto" asChild>
+                <Link to="/dashboard">
+                  View Timeline <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
 
-    <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-red-500 hover:shadow-lg">
-      <CardHeader>
-        <Users className="h-12 w-12 text-red-600 mb-4" />
-        <CardTitle>Study Resources</CardTitle>
-        <CardDescription>
-          Access e-books, practice materials, and scholarship information tailored to your interests
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Button variant="ghost" className="p-0 h-auto" asChild>
-          <Link to="/resources">
-            Browse Resources <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </Button>
-      </CardContent>
-    </Card>
+          <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-red-500 hover:shadow-lg">
+            <CardHeader>
+              <Users className="h-12 w-12 text-red-600 mb-4" />
+              <CardTitle>Study Resources</CardTitle>
+              <CardDescription>
+                Access e-books, practice materials, and scholarship information tailored to your interests
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button variant="ghost" className="p-0 h-auto" asChild>
+                <Link to="/resources">
+                  Browse Resources <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
 
-    <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-indigo-500 hover:shadow-lg">
-      <CardHeader>
-        <GraduationCap className="h-12 w-12 text-indigo-600 mb-4" />
-        <CardTitle>Personalized Guidance</CardTitle>
-        <CardDescription>
-          Get AI-powered recommendations based on your profile, location, and career goals
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Button variant="ghost" className="p-0 h-auto" asChild>
-          <Link to="/profile">
-            Setup Profile <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </Button>
-      </CardContent>
-    </Card>
-  </div>
-</section>
+          <Card className="cursor-pointer border border-gray-200 transition-all transform hover:-translate hover:border-indigo-500 hover:shadow-lg">
+            <CardHeader>
+              <GraduationCap className="h-12 w-12 text-indigo-600 mb-4" />
+              <CardTitle>Personalized Guidance</CardTitle>
+              <CardDescription>
+                Get AI-powered recommendations based on your profile, location, and career goals
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button variant="ghost" className="p-0 h-auto" asChild>
+                <Link to="/profile">
+                  Setup Profile <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
 
 
 

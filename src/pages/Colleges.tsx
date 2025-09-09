@@ -1459,7 +1459,7 @@ export default function Colleges() {
     filtered.sort((a, b) => {
       switch (sortBy) {
         // case "distance":
-        // const aDist = a.distance ? parseFloat(a.distance) : Infinity;     //Removed distance sorting as distance data is not available
+        // const aDist = a.distance ? parseFloat(a.distance) : Infinity;     //Removed distance sorting as distance data is not available - will be later integrated via API
         //   const bDist = b.distance ? parseFloat(b.distance) : Infinity;
         //   return aDist - bDist;
         case "rating":

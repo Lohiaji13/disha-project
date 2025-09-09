@@ -130,13 +130,13 @@ const personalityQuestions: Question[] = [
 
 export default function Assessment() {
   const navigate = useNavigate();
-  const [selectedAssessment, setSelectedAssessment] = useState<AssessmentType | null>(null);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedAssessment, setSelectedAssessment] = useState<AssessmentType | null>(null);  //selectedAssessment → which test is chosen (aptitude, interest, personality, or null if not chosen yet).
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); //currentQuestionIndex → shows which question number the user is on.
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [isCompleted, setIsCompleted] = useState(false);
   const [results, setResults] = useState<Record<string, number> | null>(null);
 
-  const getCurrentQuestions = () => {
+  const getCurrentQuestions = () => {   //Depending on which assessment is selected, it loads the correct question bank.
     switch (selectedAssessment) {
       case "aptitude": return aptitudeQuestions;
       case "interest": return interestQuestions;
@@ -145,10 +145,10 @@ export default function Assessment() {
     }
   };
 
-  const questions = getCurrentQuestions();
-  const currentQuestion = questions[currentQuestionIndex];
-  const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
-
+  const questions = getCurrentQuestions();  //questions → full set of questions for the chosen test.
+  const currentQuestion = questions[currentQuestionIndex];   //the question currently being shown.
+  const progress = ((currentQuestionIndex + 1) / questions.length) * 100; //for showing progress bar if needed
+ 
   const handleAnswerSelect = (value: string) => {
     if (currentQuestion) {
       setAnswers(prev => ({

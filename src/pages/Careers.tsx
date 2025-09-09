@@ -25,6 +25,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs.t
 import { Progress } from "@/components/ui/progress.tsx";
 import { Label } from "@/components/ui/label.tsx";
 
+
+
 // Mock career data
 const careerPaths = [
   {
