@@ -494,7 +494,7 @@ const mockColleges = [
         "fees": "₹25,000"
       }
     ],
-    "facilities": ["Dhanvantri Library", "Multiple Hostels", "Sports Complex", "Medical Center", "Auditorium", "Computer Centers", "Research Labs","Guest House"],
+    "facilities": ["Library", "Multiple Hostels", "Sports Complex", "Medical Center", "Auditorium", "Computer Centers", "Research Labs","Guest House"],
     "contact": {},
     "rating": null,
     "distance": null
