@@ -21,8 +21,8 @@ import {
   Trophy,
   Landmark,
   Coffee,
-  Microscope, 
-  Presentation, 
+  Microscope,
+  Presentation,
   Laptop
 } from "lucide-react";
 
@@ -494,7 +494,7 @@ const mockColleges = [
         "fees": "₹25,000"
       }
     ],
-    "facilities": [],
+    "facilities": ["Dhanvantri Library", "Multiple Hostels", "Sports Complex", "Medical Center", "Auditorium", "Computer Centers", "Research Labs","Guest House"],
     "contact": {},
     "rating": null,
     "distance": null
@@ -1506,7 +1506,7 @@ export default function Colleges() {
         return <Wifi className="h-4 w-4" />;
       case "computer lab": case "innovation center": case "computer center": case "computer centers": case "computer labs": case "ict labs":
         return <Laptop className="h-4 w-4" />;
-      case "labs": case "50+ labs": case "agricultural labs": case "basic labs":  case "engineering labs":  case "labs": case "modern labs": case "nursing labs": case "research labs": case "central instrumentation facility:":
+      case "labs": case "50+ labs": case "agricultural labs": case "basic labs": case "engineering labs": case "labs": case "modern labs": case "nursing labs": case "research labs": case "central instrumentation facility:":
         return <FlaskConical className="h-4 w-4" />;
       case "medical facilities": case "health center": case "medical center": case "associated hospitals": case "clinical training": case "clinical facilities": case "digital healthcare": case "hospital attached": case "hospital attachment":
       case "medical center": case "medical equipment": case "medical labs": case "medical unit": case "modern medical equipment": case "state-of-art medical facilities": case "super specialty hospital": case "super specialty services":
@@ -1520,9 +1520,9 @@ export default function Colleges() {
         return <Microscope className="h-4 w-4" />;
       case "auditorium": case "conference hall": case "seminar hall": case "amphitheater": case "auditorium/seminar hall": case "auditorium/conference hall": case "hall": case "conference halls": case "workshops":
         return <Landmark className="h-4 w-4" />;
-        case "modern classrooms": case "basic facilities - classrooms":
+      case "modern classrooms": case "basic facilities - classrooms":
         return <Presentation className="h-4 w-4" />;
-      case "200-acre permanent campus": case "227-acre main campus": case "400 acres campus": case "470-acre residential campus": case "610-acre campus": case "dal lake campus": case "modern campus": case "modern classrooms": case "multiple campuses": 
+      case "200-acre permanent campus": case "227-acre main campus": case "400 acres campus": case "470-acre residential campus": case "610-acre campus": case "dal lake campus": case "modern campus": case "modern classrooms": case "multiple campuses":
       case "experimental farms": case "shopping complex": case "mosque":
         return <Star className="h-4 w-4" />;
       default:
@@ -1757,9 +1757,9 @@ export default function Colleges() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="rating">Highest Rated</SelectItem>   
+                    <SelectItem value="rating">Highest Rated</SelectItem>
                     {/* <SelectItem value="distance">Nearest First</SelectItem>   Removed distance sorting as distance data is not available */}
-                    <SelectItem value="name">Name A-Z</SelectItem> 
+                    <SelectItem value="name">Name A-Z</SelectItem>
                     <SelectItem value="established">Newest First</SelectItem>
                   </SelectContent>
                 </Select>
@@ -1768,7 +1768,7 @@ export default function Colleges() {
 
 
 
-            
+
 
             {/* College Cards - orginial code*/}
             {/* {filteredColleges.length === 0 ? (
